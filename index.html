@@ -57,14 +57,50 @@
         <section class="featured-products">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Featured Products</h2>
-                    <p class="section-subtitle">Handpicked items for your lifestyle</p>
+                    <h2>Featured Products</h2>
+                    <p>Discover our most popular items</p>
                 </div>
+
+                <!-- Static Product Definitions for Snipcart Crawler -->
+                <div style="display: none;">
+                    <!-- These hidden products allow Snipcart to validate orders -->
+                    <button class="snipcart-add-item"
+                            data-item-id="candle-set-001"
+                            data-item-price="24.99"
+                            data-item-url="https://thdevintjaden.github.io/a-fields-store/index.html"
+                            data-item-description="Handcrafted soy candles with natural fragrances. Perfect for creating a cozy atmosphere."
+                            data-item-name="Premium Candle Set"
+                            data-item-image="./assets/images/placeholder.svg">
+                        Add to Cart
+                    </button>
+                    
+                    <button class="snipcart-add-item"
+                            data-item-id="tea-collection-002"
+                            data-item-price="19.99"
+                            data-item-url="https://thdevintjaden.github.io/a-fields-store/index.html"
+                            data-item-description="Premium organic teas sourced from the finest gardens. Relaxation in every cup."
+                            data-item-name="Organic Tea Collection"
+                            data-item-image="./assets/images/placeholder.svg">
+                        Add to Cart
+                    </button>
+                    
+                    <button class="snipcart-add-item"
+                            data-item-id="bamboo-kitchen-003"
+                            data-item-price="34.99"
+                            data-item-url="https://thdevintjaden.github.io/a-fields-store/index.html"
+                            data-item-description="Eco-friendly bamboo kitchen utensils. Sustainable and beautiful for your home."
+                            data-item-name="Bamboo Kitchen Set"
+                            data-item-image="./assets/images/placeholder.svg">
+                        Add to Cart
+                    </button>
+                </div>
+
                 <div class="products-grid">
-                    <!-- Featured products will be loaded dynamically -->
+                    <!-- Featured products will be loaded here dynamically -->
                 </div>
-                <div class="text-center" style="margin-top: var(--spacing-3xl);">
-                    <a href="products.html" class="btn btn-secondary">View All Products</a>
+                
+                <div class="text-center">
+                    <a href="./products.html" class="btn btn-secondary">View All Products</a>
                 </div>
             </div>
         </section>

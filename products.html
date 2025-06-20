@@ -38,16 +38,20 @@
         </section>
 
         <!-- Products Section -->
-        <section class="products-page">
+        <section class="products-section">
             <div class="container">
-                <!-- Filter and Sort Options -->
+                <div class="section-header">
+                    <h2>Our Products</h2>
+                    <p>Discover our curated collection of premium home goods</p>
+                </div>
+
+                <!-- Products Controls -->
                 <div class="products-controls">
-                    <div class="products-count">
-                        <span id="products-count">0</span> products available
+                    <div class="search-box">
+                        <input type="text" id="product-search" placeholder="Search products..." class="form-input">
                     </div>
-                    <div class="products-sort">
-                        <label for="sort-select">Sort by:</label>
-                        <select id="sort-select" class="sort-select">
+                    <div class="sort-box">
+                        <select id="sort-select" class="form-select">
                             <option value="featured">Featured</option>
                             <option value="price-low">Price: Low to High</option>
                             <option value="price-high">Price: High to Low</option>
@@ -57,9 +61,138 @@
                     </div>
                 </div>
 
+                <!-- Products Count -->
+                <div class="products-count">
+                    Showing <span id="products-count">0</span> products
+                </div>
+
+                <!-- Static Product Definitions for Snipcart Crawler -->
+                <div style="display: none;">
+                    <!-- These hidden products allow Snipcart to validate orders -->
+                    <button class="snipcart-add-item"
+                            data-item-id="candle-set-001"
+                            data-item-price="24.99"
+                            data-item-url="https://thdevintjaden.github.io/a-fields-store/products.html"
+                            data-item-description="Handcrafted soy candles with natural fragrances. Perfect for creating a cozy atmosphere."
+                            data-item-name="Premium Candle Set"
+                            data-item-image="./assets/images/placeholder.svg">
+                        Add to Cart
+                    </button>
+                    
+                    <button class="snipcart-add-item"
+                            data-item-id="tea-collection-002"
+                            data-item-price="19.99"
+                            data-item-url="https://thdevintjaden.github.io/a-fields-store/products.html"
+                            data-item-description="Premium organic teas sourced from the finest gardens. Relaxation in every cup."
+                            data-item-name="Organic Tea Collection"
+                            data-item-image="./assets/images/placeholder.svg">
+                        Add to Cart
+                    </button>
+                    
+                    <button class="snipcart-add-item"
+                            data-item-id="bamboo-kitchen-003"
+                            data-item-price="34.99"
+                            data-item-url="https://thdevintjaden.github.io/a-fields-store/products.html"
+                            data-item-description="Eco-friendly bamboo kitchen utensils. Sustainable and beautiful for your home."
+                            data-item-name="Bamboo Kitchen Set"
+                            data-item-image="./assets/images/placeholder.svg">
+                        Add to Cart
+                    </button>
+                    
+                    <button class="snipcart-add-item"
+                            data-item-id="linen-blanket-004"
+                            data-item-price="49.99"
+                            data-item-url="https://thdevintjaden.github.io/a-fields-store/products.html"
+                            data-item-description="Soft, breathable linen throw blanket. Perfect for cozy evenings and home decor."
+                            data-item-name="Linen Throw Blanket"
+                            data-item-image="./assets/images/placeholder.svg">
+                        Add to Cart
+                    </button>
+                    
+                    <button class="snipcart-add-item"
+                            data-item-id="diffuser-005"
+                            data-item-price="29.99"
+                            data-item-url="https://thdevintjaden.github.io/a-fields-store/products.html"
+                            data-item-description="Aromatherapy diffuser with LED mood lighting. Create a peaceful atmosphere."
+                            data-item-name="Essential Oil Diffuser"
+                            data-item-image="./assets/images/placeholder.svg">
+                        Add to Cart
+                    </button>
+                    
+                    <button class="snipcart-add-item"
+                            data-item-id="mug-set-006"
+                            data-item-price="39.99"
+                            data-item-url="https://thdevintjaden.github.io/a-fields-store/products.html"
+                            data-item-description="Handcrafted ceramic mugs with beautiful designs. Perfect for your morning coffee."
+                            data-item-name="Ceramic Coffee Mug Set"
+                            data-item-image="./assets/images/placeholder.svg">
+                        Add to Cart
+                    </button>
+                    
+                    <button class="snipcart-add-item"
+                            data-item-id="yoga-mat-007"
+                            data-item-price="44.99"
+                            data-item-url="https://thdevintjaden.github.io/a-fields-store/products.html"
+                            data-item-description="Non-slip yoga mat with carrying strap. Perfect for home workouts and meditation."
+                            data-item-name="Yoga Mat & Strap"
+                            data-item-image="./assets/images/placeholder.svg">
+                        Add to Cart
+                    </button>
+                    
+                    <button class="snipcart-add-item"
+                            data-item-id="wall-art-008"
+                            data-item-price="54.99"
+                            data-item-url="https://thdevintjaden.github.io/a-fields-store/products.html"
+                            data-item-description="Minimalist wall art prints. Add style and personality to your space."
+                            data-item-name="Wall Art Print Set"
+                            data-item-image="./assets/images/placeholder.svg">
+                        Add to Cart
+                    </button>
+                    
+                    <button class="snipcart-add-item"
+                            data-item-id="tea-infuser-009"
+                            data-item-price="27.99"
+                            data-item-url="https://thdevintjaden.github.io/a-fields-store/products.html"
+                            data-item-description="Stainless steel tea infuser with loose leaf tea sampler. Perfect for tea lovers."
+                            data-item-name="Herbal Tea Infuser"
+                            data-item-image="./assets/images/placeholder.svg">
+                        Add to Cart
+                    </button>
+                    
+                    <button class="snipcart-add-item"
+                            data-item-id="skillet-010"
+                            data-item-price="64.99"
+                            data-item-url="https://thdevintjaden.github.io/a-fields-store/products.html"
+                            data-item-description="Pre-seasoned cast iron skillet. Versatile cooking for any meal."
+                            data-item-name="Cast Iron Skillet"
+                            data-item-image="./assets/images/placeholder.svg">
+                        Add to Cart
+                    </button>
+                    
+                    <button class="snipcart-add-item"
+                            data-item-id="meditation-cushion-011"
+                            data-item-price="34.99"
+                            data-item-url="https://thdevintjaden.github.io/a-fields-store/products.html"
+                            data-item-description="Comfortable meditation cushions with storage bag. Perfect for mindfulness practice."
+                            data-item-name="Meditation Cushion Set"
+                            data-item-image="./assets/images/placeholder.svg">
+                        Add to Cart
+                    </button>
+                    
+                    <button class="snipcart-add-item"
+                            data-item-id="table-lamp-012"
+                            data-item-price="74.99"
+                            data-item-url="https://thdevintjaden.github.io/a-fields-store/products.html"
+                            data-item-description="Modern table lamp with adjustable brightness. Perfect for reading and ambiance."
+                            data-item-name="Table Lamp"
+                            data-item-image="./assets/images/placeholder.svg">
+                        Add to Cart
+                    </button>
+                </div>
+
                 <!-- Products Grid -->
-                <div class="products-grid" id="products-grid">
-                    <!-- Products will be loaded dynamically -->
+                <div id="products-grid" class="products-grid">
+                    <!-- Products will be loaded here dynamically -->
                 </div>
             </div>
         </section>

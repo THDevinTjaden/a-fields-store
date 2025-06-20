@@ -1,0 +1,124 @@
+{
+  "products": [
+    {
+      "id": "candle-set-001",
+      "name": "Premium Candle Set",
+      "description": "Handcrafted soy candles with natural fragrances. Perfect for creating a cozy atmosphere.",
+      "price": 24.99,
+      "image": "./assets/images/placeholder.svg",
+      "category": "home",
+      "stock": 15,
+      "url": "https://yourdomain.com/products.html"
+    },
+    {
+      "id": "tea-collection-002",
+      "name": "Organic Tea Collection",
+      "description": "Premium organic teas sourced from the finest gardens. Relaxation in every cup.",
+      "price": 19.99,
+      "image": "./assets/images/placeholder.svg",
+      "category": "beverages",
+      "stock": 25,
+      "url": "https://yourdomain.com/products.html"
+    },
+    {
+      "id": "bamboo-kitchen-003",
+      "name": "Bamboo Kitchen Set",
+      "description": "Eco-friendly bamboo kitchen utensils. Sustainable and beautiful for your home.",
+      "price": 34.99,
+      "image": "./assets/images/placeholder.svg",
+      "category": "kitchen",
+      "stock": 8,
+      "url": "https://yourdomain.com/products.html"
+    },
+    {
+      "id": "linen-blanket-004",
+      "name": "Linen Throw Blanket",
+      "description": "Soft, breathable linen throw blanket. Perfect for cozy evenings and home decor.",
+      "price": 49.99,
+      "image": "./assets/images/placeholder.svg",
+      "category": "home",
+      "stock": 12,
+      "url": "https://yourdomain.com/products.html"
+    },
+    {
+      "id": "diffuser-005",
+      "name": "Essential Oil Diffuser",
+      "description": "Aromatherapy diffuser with LED mood lighting. Create a peaceful atmosphere.",
+      "price": 29.99,
+      "image": "./assets/images/placeholder.svg",
+      "category": "wellness",
+      "stock": 20,
+      "url": "https://yourdomain.com/products.html"
+    },
+    {
+      "id": "mug-set-006",
+      "name": "Ceramic Coffee Mug Set",
+      "description": "Handcrafted ceramic mugs with beautiful designs. Perfect for your morning coffee.",
+      "price": 39.99,
+      "image": "./assets/images/placeholder.svg",
+      "category": "kitchen",
+      "stock": 18,
+      "url": "https://yourdomain.com/products.html"
+    },
+    {
+      "id": "yoga-mat-007",
+      "name": "Yoga Mat & Strap",
+      "description": "Non-slip yoga mat with carrying strap. Perfect for home workouts and meditation.",
+      "price": 44.99,
+      "image": "./assets/images/placeholder.svg",
+      "category": "wellness",
+      "stock": 22,
+      "url": "https://yourdomain.com/products.html"
+    },
+    {
+      "id": "wall-art-008",
+      "name": "Wall Art Print Set",
+      "description": "Minimalist wall art prints. Add style and personality to your space.",
+      "price": 54.99,
+      "image": "./assets/images/placeholder.svg",
+      "category": "home",
+      "stock": 5,
+      "url": "https://yourdomain.com/products.html"
+    },
+    {
+      "id": "tea-infuser-009",
+      "name": "Herbal Tea Infuser",
+      "description": "Stainless steel tea infuser with loose leaf tea sampler. Perfect for tea lovers.",
+      "price": 27.99,
+      "image": "./assets/images/placeholder.svg",
+      "category": "beverages",
+      "stock": 30,
+      "url": "https://yourdomain.com/products.html"
+    },
+    {
+      "id": "skillet-010",
+      "name": "Cast Iron Skillet",
+      "description": "Pre-seasoned cast iron skillet. Versatile cooking for any meal.",
+      "price": 64.99,
+      "image": "./assets/images/placeholder.svg",
+      "category": "kitchen",
+      "stock": 3,
+      "url": "https://yourdomain.com/products.html"
+    },
+    {
+      "id": "meditation-cushion-011",
+      "name": "Meditation Cushion Set",
+      "description": "Comfortable meditation cushions with storage bag. Perfect for mindfulness practice.",
+      "price": 34.99,
+      "image": "./assets/images/placeholder.svg",
+      "category": "wellness",
+      "stock": 0,
+      "url": "https://yourdomain.com/products.html"
+    },
+    {
+      "id": "table-lamp-012",
+      "name": "Table Lamp",
+      "description": "Modern table lamp with adjustable brightness. Perfect for reading and ambiance.",
+      "price": 74.99,
+      "image": "./assets/images/placeholder.svg",
+      "category": "home",
+      "stock": 7,
+      "url": "https://yourdomain.com/products.html"
+    }
+  ]
+} 

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Products to Snipcart - Ashley Fields</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <style>
+        .add-product-form {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--border-color);
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            transition: border-color var(--transition-normal);
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .btn-add-product {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            width: 100%;
+        }
+        
+        .btn-add-product:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .status-message {
+            padding: 1rem;
+            border-radius: var(--radius-md);
+            margin: 1rem 0;
+            text-align: center;
+        }
+        
+        .status-success {
+            background: var(--success-light);
+            color: var(--success-color);
+            border: 1px solid var(--success-color);
+        }
+        
+        .status-error {
+            background: var(--error-light);
+            color: var(--error-color);
+            border: 1px solid var(--error-color);
+        }
+        
+        .instructions {
+            background: var(--light-color);
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            margin-bottom: 2rem;
+        }
+        
+        .instructions h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .instructions ol {
+            padding-left: 1.5rem;
+        }
+        
+        .instructions li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="./index.html" class="nav-logo">
+                    <h1>Ashley Fields</h1>
+                </a>
+                <div class="nav-menu">
+                    <a href="./index.html" class="nav-link">Home</a>
+                    <a href="./products.html" class="nav-link">Products</a>
+                    <a href="./about.html" class="nav-link">About</a>
+                    <a href="./contact.html" class="nav-link">Contact</a>
+                </div>
+                <div class="nav-cart">
+                    <button class="snipcart-checkout btn btn-primary">
+                        Cart (<span class="snipcart-items-count">0</span>)
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <h1 class="page-title">Add Products to Snipcart Dashboard</h1>
+            
+            <div class="instructions">
+                <h3>📋 How to Add Products to Your Snipcart Dashboard</h3>
+                <ol>
+                    <li><strong>Go to your Snipcart Dashboard:</strong> <a href="https://app.snipcart.com/dashboard" target="_blank">https://app.snipcart.com/dashboard</a></li>
+                    <li><strong>Navigate to Products:</strong> Click on "Products" in the left sidebar</li>
+                    <li><strong>Add New Product:</strong> Click "Add Product" button</li>
+                    <li><strong>Fill in the details:</strong> Use the form below as a reference for the required fields</li>
+                    <li><strong>Save the product:</strong> Click "Save" to add it to your catalog</li>
+                    <li><strong>Update your website:</strong> Set <code>useLocalData = false</code> in snipcart-products.js to load from Snipcart</li>
+                </ol>
+            </div>
+
+            <div class="add-product-form">
+                <h2>Product Information Reference</h2>
+                <p>Use this form to prepare your product information before adding to Snipcart dashboard:</p>
+                
+                <form id="productForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="productId">Product ID *</label>
+                            <input type="text" id="productId" name="productId" placeholder="e.g., candle-set-001" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="productName">Product Name *</label>
+                            <input type="text" id="productName" name="productName" placeholder="e.g., Premium Candle Set" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="productDescription">Description *</label>
+                        <textarea id="productDescription" name="productDescription" rows="3" placeholder="Product description..." required></textarea>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="productPrice">Price ($) *</label>
+                            <input type="number" id="productPrice" name="productPrice" step="0.01" min="0" placeholder="24.99" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="productCategory">Category</label>
+                            <select id="productCategory" name="productCategory">
+                                <option value="home">Home</option>
+                                <option value="kitchen">Kitchen</option>
+                                <option value="wellness">Wellness</option>
+                                <option value="beverages">Beverages</option>
+                                <option value="uncategorized">Uncategorized</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="productStock">Stock Quantity</label>
+                            <input type="number" id="productStock" name="productStock" min="0" placeholder="15">
+                        </div>
+                        <div class="form-group">
+                            <label for="productImage">Image URL</label>
+                            <input type="url" id="productImage" name="productImage" placeholder="https://example.com/image.jpg">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="productUrl">Product URL</label>
+                        <input type="url" id="productUrl" name="productUrl" placeholder="https://yourstore.com/products/product-name">
+                    </div>
+                    
+                    <button type="submit" class="btn-add-product">Generate Snipcart Product Code</button>
+                </form>
+                
+                <div id="statusMessage" class="status-message" style="display: none;"></div>
+                
+                <div id="productCode" style="display: none;">
+                    <h3>Snipcart Product Code</h3>
+                    <p>Copy this code and add it to your HTML pages:</p>
+                    <pre id="codeOutput" style="background: #f8f9fa; padding: 1rem; border-radius: var(--radius-md); overflow-x: auto;"></pre>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Ashley Fields</h3>
+                    <p>Curated home goods for a beautiful life.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./products.html">Products</a></li>
+                        <li><a href="./about.html">About</a></li>
+                        <li><a href="./contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: hello@ashleyfields.com</p>
+                    <p>Phone: (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Ashley Fields. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Snipcart Configuration -->
+    <script>
+        window.SnipcartSettings = {
+            publicApiKey: 'MmNmYmQzNmUtY2E3MC00NjgxLWI0M2MtMGU3OGQ3YmRiYWRhNjM4ODYwNTY1ODUxOTM0NzYx',
+            loadStrategy: 'on-user-interaction',
+            addProductBehavior: 'none',
+            modalStyle: 'side',
+            currency: 'usd',
+            language: 'en'
+        };
+    </script>
+    
+    <!-- Snipcart -->
+    <script async src="https://cdn.snipcart.com/themes/v3.4.1/default/snipcart.js"></script>
+
+    <!-- Scripts -->
+    <script src="./js/main.js"></script>
+    <script>
+        // Product form handling
+        document.getElementById('productForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const productData = {
+                id: formData.get('productId'),
+                name: formData.get('productName'),
+                description: formData.get('productDescription'),
+                price: parseFloat(formData.get('productPrice')),
+                category: formData.get('productCategory'),
+                stock: parseInt(formData.get('productStock')) || 0,
+                image: formData.get('productImage') || './assets/images/placeholder.svg',
+                url: formData.get('productUrl') || window.location.href
+            };
+            
+            // Generate Snipcart product code
+            const productCode = generateSnipcartCode(productData);
+            
+            // Display the code
+            document.getElementById('codeOutput').textContent = productCode;
+            document.getElementById('productCode').style.display = 'block';
+            
+            // Show success message
+            showStatus('Product code generated successfully! Copy the code above and add it to your HTML pages.', 'success');
+            
+            // Scroll to the code
+            document.getElementById('productCode').scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        function generateSnipcartCode(product) {
+            return `<div class="product-card">
+    <div class="product-image">
+        <img src="${product.image}" alt="${product.name}" loading="lazy">
+        <div class="stock-badge ${product.stock > 0 ? 'in-stock' : 'out-of-stock'}">
+            ${product.stock > 0 ? 'In Stock' : 'Out of Stock'}
+        </div>
+    </div>
+    <div class="product-info">
+        <h3 class="product-title">${product.name}</h3>
+        <p class="product-description">${product.description}</p>
+        <div class="product-price">$${product.price.toFixed(2)}</div>
+        <div class="product-stock">
+            <span class="stock-text ${product.stock > 0 ? 'in-stock' : 'out-of-stock'}">
+                ${product.stock > 0 ? `${product.stock} in stock` : 'Out of stock'}
+            </span>
+        </div>
+        ${product.stock > 0 ? 
+            `<button class="btn btn-primary snipcart-add-item"
+                    data-item-id="${product.id}"
+                    data-item-price="${product.price}"
+                    data-item-url="${product.url}"
+                    data-item-description="${product.description}"
+                    data-item-name="${product.name}"
+                    data-item-image="${product.image}">
+                Add to Cart
+            </button>` :
+            `<button class="btn btn-secondary" disabled>
+                Out of Stock
+            </button>`
+        }
+    </div>
+</div>`;
+        }
+        
+        function showStatus(message, type) {
+            const statusElement = document.getElementById('statusMessage');
+            statusElement.textContent = message;
+            statusElement.className = `status-message status-${type}`;
+            statusElement.style.display = 'block';
+            
+            setTimeout(() => {
+                statusElement.style.display = 'none';
+            }, 5000);
+        }
+    </script>
+</body>
+</html> 

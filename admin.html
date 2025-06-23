@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Management - Ashley Fields</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .admin-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .admin-header {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .admin-tabs {
+            display: flex;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #e9ecef;
+        }
+        
+        .admin-tab {
+            padding: 15px 30px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            color: #6c757d;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .admin-tab.active {
+            color: #007bff;
+            border-bottom-color: #007bff;
+        }
+        
+        .admin-tab:hover {
+            color: #007bff;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .product-form {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: flex-end;
+        }
+        
+        .products-list {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .product-item {
+            display: grid;
+            grid-template-columns: 80px 2fr 1fr 1fr 100px;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid #e9ecef;
+            gap: 20px;
+        }
+        
+        .product-item:last-child {
+            border-bottom: none;
+        }
+        
+        .product-image {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+        
+        .product-info h4 {
+            margin: 0 0 5px 0;
+            color: #333;
+        }
+        
+        .product-info p {
+            margin: 0;
+            color: #6c757d;
+            font-size: 14px;
+        }
+        
+        .product-category {
+            background: #e9ecef;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+            color: #495057;
+        }
+        
+        .product-price {
+            font-weight: 600;
+            color: #28a745;
+            font-size: 18px;
+        }
+        
+        .product-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn-edit,
+        .btn-delete {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-edit {
+            background: #007bff;
+            color: white;
+        }
+        
+        .btn-edit:hover {
+            background: #0056b3;
+        }
+        
+        .btn-delete {
+            background: #dc3545;
+            color: white;
+        }
+        
+        .btn-delete:hover {
+            background: #c82333;
+        }
+        
+        .export-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        
+        .export-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .alert {
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        
+        .alert-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .alert-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .product-item {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                text-align: center;
+            }
+            
+            .product-actions {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="./index.html">Ashley Fields</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="./index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./products.html" class="nav-link">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="admin-container">
+        <div class="admin-header">
+            <h1>Product Management</h1>
+            <p>Add, edit, and manage your products easily</p>
+        </div>
+
+        <div id="alert-container"></div>
+
+        <div class="admin-tabs">
+            <button class="admin-tab active" data-tab="add-product">Add Product</button>
+            <button class="admin-tab" data-tab="manage-products">Manage Products</button>
+            <button class="admin-tab" data-tab="export">Export/Import</button>
+        </div>
+
+        <!-- Add Product Tab -->
+        <div id="add-product" class="tab-content active">
+            <form id="product-form" class="product-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="product-name">Product Name *</label>
+                        <input type="text" id="product-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-category">Category *</label>
+                        <select id="product-category" name="category" required>
+                            <option value="">Select Category</option>
+                            <option value="ceramics">Ceramics</option>
+                            <option value="textiles">Textiles</option>
+                            <option value="candles">Candles</option>
+                            <option value="jewelry">Jewelry</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-price">Price ($) *</label>
+                        <input type="number" id="product-price" name="price" step="0.01" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-id">Product ID *</label>
+                        <input type="text" id="product-id" name="id" required placeholder="e.g., ceramic-vase-blue">
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="product-description">Description *</label>
+                        <textarea id="product-description" name="description" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-image">Image URL</label>
+                        <input type="url" id="product-image" name="image" placeholder="https://example.com/image.jpg">
+                    </div>
+                    <div class="form-group">
+                        <label for="product-stock">Stock Quantity</label>
+                        <input type="number" id="product-stock" name="stock" min="0" value="1">
+                    </div>
+                </div>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-secondary" onclick="resetForm()">Reset</button>
+                    <button type="submit" class="btn btn-primary">Add Product</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Manage Products Tab -->
+        <div id="manage-products" class="tab-content">
+            <div class="products-list" id="products-list">
+                <!-- Products will be loaded here -->
+            </div>
+        </div>
+
+        <!-- Export/Import Tab -->
+        <div id="export" class="tab-content">
+            <div class="export-section">
+                <h3>Export Products</h3>
+                <p>Download your products as a JSON file for backup or to transfer to another system.</p>
+                <div class="export-buttons">
+                    <button class="btn btn-primary" onclick="exportProducts()">Export Products</button>
+                    <button class="btn btn-secondary" onclick="generateHTML()">Generate HTML</button>
+                </div>
+            </div>
+            
+            <div class="export-section">
+                <h3>Import Products</h3>
+                <p>Upload a JSON file to import products (this will replace all existing products).</p>
+                <div class="export-buttons">
+                    <input type="file" id="import-file" accept=".json" style="display: none;">
+                    <button class="btn btn-secondary" onclick="document.getElementById('import-file').click()">Choose File</button>
+                    <button class="btn btn-primary" onclick="importProducts()">Import Products</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Product Management System
+        class ProductManager {
+            constructor() {
+                this.products = this.loadProducts();
+                this.currentEditId = null;
+                this.init();
+            }
+
+            init() {
+                this.setupEventListeners();
+                this.renderProducts();
+                this.setupTabNavigation();
+            }
+
+            setupEventListeners() {
+                document.getElementById('product-form').addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    this.handleFormSubmit();
+                });
+
+                document.getElementById('import-file').addEventListener('change', (e) => {
+                    this.handleFileSelect(e);
+                });
+            }
+
+            setupTabNavigation() {
+                document.querySelectorAll('.admin-tab').forEach(tab => {
+                    tab.addEventListener('click', () => {
+                        this.switchTab(tab.dataset.tab);
+                    });
+                });
+            }
+
+            switchTab(tabName) {
+                // Remove active class from all tabs and content
+                document.querySelectorAll('.admin-tab').forEach(tab => tab.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+                // Add active class to selected tab and content
+                document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
+                document.getElementById(tabName).classList.add('active');
+
+                // Refresh products list if switching to manage tab
+                if (tabName === 'manage-products') {
+                    this.renderProducts();
+                }
+            }
+
+            loadProducts() {
+                const stored = localStorage.getItem('ashley-fields-products');
+                return stored ? JSON.parse(stored) : this.getDefaultProducts();
+            }
+
+            saveProducts() {
+                localStorage.setItem('ashley-fields-products', JSON.stringify(this.products));
+            }
+
+            getDefaultProducts() {
+                return [
+                    {
+                        id: 'ceramic-vase-sage',
+                        name: 'Sage Green Vase',
+                        price: 45.00,
+                        category: 'ceramics',
+                        description: 'Hand-thrown ceramic vase in sage green glaze',
+                        image: './images/ceramic-vase-1.jpg',
+                        stock: 5
+                    },
+                    {
+                        id: 'ceramic-mug-1',
+                        name: 'Artisan Coffee Mug',
+                        price: 28.00,
+                        category: 'ceramics',
+                        description: 'Handcrafted ceramic coffee mug with unique texture',
+                        image: './images/ceramic-mug-1.jpg',
+                        stock: 10
+                    },
+                    {
+                        id: 'scarf-wool-1',
+                        name: 'Merino Wool Scarf',
+                        price: 35.00,
+                        category: 'textiles',
+                        description: 'Luxurious handwoven scarf in soft merino wool',
+                        image: './images/scarf-wool-1.jpg',
+                        stock: 8
+                    },
+                    {
+                        id: 'candle-lavender',
+                        name: 'Lavender Fields Candle',
+                        price: 28.00,
+                        category: 'candles',
+                        description: 'Natural soy wax candle with lavender essential oils',
+                        image: './images/candle-lavender.jpg',
+                        stock: 15
+                    }
+                ];
+            }
+
+            handleFormSubmit() {
+                const formData = new FormData(document.getElementById('product-form'));
+                const product = {
+                    id: formData.get('id'),
+                    name: formData.get('name'),
+                    price: parseFloat(formData.get('price')),
+                    category: formData.get('category'),
+                    description: formData.get('description'),
+                    image: formData.get('image') || './images/product-placeholder.jpg',
+                    stock: parseInt(formData.get('stock')) || 1
+                };
+
+                if (this.currentEditId) {
+                    // Update existing product
+                    const index = this.products.findIndex(p => p.id === this.currentEditId);
+                    if (index !== -1) {
+                        this.products[index] = product;
+                        this.showAlert('Product updated successfully!', 'success');
+                    }
+                    this.currentEditId = null;
+                } else {
+                    // Add new product
+                    if (this.products.find(p => p.id === product.id)) {
+                        this.showAlert('Product ID already exists!', 'error');
+                        return;
+                    }
+                    this.products.push(product);
+                    this.showAlert('Product added successfully!', 'success');
+                }
+
+                this.saveProducts();
+                this.renderProducts();
+                this.resetForm();
+            }
+
+            editProduct(productId) {
+                const product = this.products.find(p => p.id === productId);
+                if (product) {
+                    this.currentEditId = productId;
+                    document.getElementById('product-name').value = product.name;
+                    document.getElementById('product-category').value = product.category;
+                    document.getElementById('product-price').value = product.price;
+                    document.getElementById('product-id').value = product.id;
+                    document.getElementById('product-description').value = product.description;
+                    document.getElementById('product-image').value = product.image;
+                    document.getElementById('product-stock').value = product.stock;
+
+                    // Switch to add product tab
+                    this.switchTab('add-product');
+                    document.querySelector('[data-tab="add-product"]').textContent = 'Edit Product';
+                }
+            }
+
+            deleteProduct(productId) {
+                if (confirm('Are you sure you want to delete this product?')) {
+                    this.products = this.products.filter(p => p.id !== productId);
+                    this.saveProducts();
+                    this.renderProducts();
+                    this.showAlert('Product deleted successfully!', 'success');
+                }
+            }
+
+            renderProducts() {
+                const container = document.getElementById('products-list');
+                if (this.products.length === 0) {
+                    container.innerHTML = '<div style="padding: 40px; text-align: center; color: #6c757d;">No products found. Add your first product!</div>';
+                    return;
+                }
+
+                container.innerHTML = this.products.map(product => `
+                    <div class="product-item">
+                        <img src="${product.image}" alt="${product.name}" class="product-image" onerror="this.src='./images/product-placeholder.jpg'">
+                        <div class="product-info">
+                            <h4>${product.name}</h4>
+                            <p>${product.description}</p>
+                            <p><strong>ID:</strong> ${product.id}</p>
+                        </div>
+                        <div class="product-category">${product.category}</div>
+                        <div class="product-price">$${product.price.toFixed(2)}</div>
+                        <div class="product-actions">
+                            <button class="btn-edit" onclick="productManager.editProduct('${product.id}')">Edit</button>
+                            <button class="btn-delete" onclick="productManager.deleteProduct('${product.id}')">Delete</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            resetForm() {
+                document.getElementById('product-form').reset();
+                this.currentEditId = null;
+                document.querySelector('[data-tab="add-product"]').textContent = 'Add Product';
+            }
+
+            exportProducts() {
+                const dataStr = JSON.stringify(this.products, null, 2);
+                const dataBlob = new Blob([dataStr], {type: 'application/json'});
+                const url = URL.createObjectURL(dataBlob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = 'ashley-fields-products.json';
+                link.click();
+                URL.revokeObjectURL(url);
+                this.showAlert('Products exported successfully!', 'success');
+            }
+
+            generateHTML() {
+                const html = this.generateProductsHTML();
+                const dataBlob = new Blob([html], {type: 'text/html'});
+                const url = URL.createObjectURL(dataBlob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = 'products-html.html';
+                link.click();
+                URL.revokeObjectURL(url);
+                this.showAlert('HTML generated successfully!', 'success');
+            }
+
+            generateProductsHTML() {
+                return this.products.map(product => `
+                    <div class="product-card" data-category="${product.category}">
+                        <div class="product-image">
+                            <img src="${product.image}" alt="${product.name}" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">${product.name}</h3>
+                            <p class="product-description">${product.description}</p>
+                            <div class="product-price">$${product.price.toFixed(2)}</div>
+                            <button class="snipcart-add-item btn btn-primary"
+                                    data-item-id="${product.id}"
+                                    data-item-name="${product.name}"
+                                    data-item-price="${product.price.toFixed(2)}"
+                                    data-item-url="https://thdevintjaden.github.io/a-fields-store/products.html"
+                                    data-item-description="${product.description}">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            handleFileSelect(event) {
+                const file = event.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        try {
+                            const products = JSON.parse(e.target.result);
+                            if (Array.isArray(products)) {
+                                this.products = products;
+                                this.saveProducts();
+                                this.renderProducts();
+                                this.showAlert('Products imported successfully!', 'success');
+                            } else {
+                                this.showAlert('Invalid file format!', 'error');
+                            }
+                        } catch (error) {
+                            this.showAlert('Error reading file!', 'error');
+                        }
+                    };
+                    reader.readAsText(file);
+                }
+            }
+
+            importProducts() {
+                // This will be triggered by the file input change event
+                document.getElementById('import-file').click();
+            }
+
+            showAlert(message, type) {
+                const container = document.getElementById('alert-container');
+                const alert = document.createElement('div');
+                alert.className = `alert alert-${type}`;
+                alert.textContent = message;
+                container.appendChild(alert);
+
+                setTimeout(() => {
+                    alert.remove();
+                }, 3000);
+            }
+        }
+
+        // Global functions for button clicks
+        function resetForm() {
+            productManager.resetForm();
+        }
+
+        function exportProducts() {
+            productManager.exportProducts();
+        }
+
+        function generateHTML() {
+            productManager.generateHTML();
+        }
+
+        function importProducts() {
+            productManager.importProducts();
+        }
+
+        // Initialize the product manager
+        const productManager = new ProductManager();
+    </script>
+</body>
+</html> 

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ashley Fields - Handcrafted treasures made with love. Discover unique handmade goods for your home and lifestyle.">
+    <meta name="keywords" content="handmade, crafts, artisan, home decor, gifts, Ashley Fields">
+    <meta property="og:title" content="Ashley Fields - Handcrafted Treasures">
+    <meta property="og:description" content="Discover unique handmade goods crafted with love by Ashley Fields">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourusername.github.io/a-fields-store/">
+    <meta property="og:image" content="./images/hero-image.jpg">
+    <title>Ashley Fields - Handcrafted Treasures</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="./index.html">Ashley Fields</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="./index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./products.html" class="nav-link">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <button class="snipcart-checkout nav-cart-btn">
+                        <span class="cart-icon">🛒</span>
+                        <span class="cart-count snipcart-items-count">0</span>
+                    </button>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Handcrafted Treasures</h1>
+            <p class="hero-subtitle">Unique handmade goods crafted with love by Ashley Fields</p>
+            <div class="hero-buttons">
+                <a href="./products.html" class="btn btn-primary">Shop Now</a>
+                <a href="./about.html" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="./images/hero-image.jpg" alt="Handmade crafts by Ashley Fields" loading="lazy">
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="container">
+            <h2 class="section-title">Featured Creations</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="./images/product-1.jpg" alt="Handmade ceramic vase" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Ceramic Vase Collection</h3>
+                        <p class="product-description">Beautiful hand-thrown ceramic vases in earthy tones</p>
+                        <div class="product-price">$45.00</div>
+                        <button class="snipcart-add-item btn btn-primary"
+                                data-item-id="ceramic-vase-001"
+                                data-item-name="Ceramic Vase Collection"
+                                data-item-price="45.00"
+                                data-item-url="https://yourusername.github.io/a-fields-store/products.html"
+                                data-item-description="Hand-thrown ceramic vase in earthy tones">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="./images/product-2.jpg" alt="Handwoven scarf" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Handwoven Scarf</h3>
+                        <p class="product-description">Cozy handwoven scarf in soft merino wool</p>
+                        <div class="product-price">$35.00</div>
+                        <button class="snipcart-add-item btn btn-primary"
+                                data-item-id="scarf-001"
+                                data-item-name="Handwoven Scarf"
+                                data-item-price="35.00"
+                                data-item-url="https://yourusername.github.io/a-fields-store/products.html"
+                                data-item-description="Cozy handwoven scarf in soft merino wool">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="./images/product-3.jpg" alt="Handmade candles" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Soy Wax Candles</h3>
+                        <p class="product-description">Natural soy wax candles with essential oils</p>
+                        <div class="product-price">$28.00</div>
+                        <button class="snipcart-add-item btn btn-primary"
+                                data-item-id="candle-001"
+                                data-item-name="Soy Wax Candles"
+                                data-item-price="28.00"
+                                data-item-url="https://yourusername.github.io/a-fields-store/products.html"
+                                data-item-description="Natural soy wax candles with essential oils">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="./products.html" class="btn btn-outline">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">Meet Ashley</h2>
+                    <p>Hi, I'm Ashley Fields, a passionate artisan dedicated to creating beautiful, handcrafted goods that bring warmth and character to your home. Each piece is carefully crafted with attention to detail and made with love.</p>
+                    <p>From ceramics to textiles, every creation tells a story and is designed to be both beautiful and functional. I believe in the power of handmade items to create meaningful connections and lasting memories.</p>
+                    <a href="./about.html" class="btn btn-secondary">Read My Story</a>
+                </div>
+                <div class="about-image">
+                    <img src="./images/ashley-portrait.jpg" alt="Ashley Fields at work" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Ashley's handmade ceramics are absolutely stunning. Each piece has such character and quality. I love supporting local artisans!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>Sarah M.</strong>
+                        <span>Verified Customer</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"The handwoven scarf I received is incredibly soft and beautifully made. It's become my favorite accessory this winter."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>Michael R.</strong>
+                        <span>Verified Customer</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Ashley's candles fill my home with the most wonderful scents. The quality and attention to detail is exceptional."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>Jennifer L.</strong>
+                        <span>Verified Customer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Connected</h2>
+                <p>Be the first to know about new creations and special offers</p>
+                <form class="newsletter-form" id="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Ashley Fields</h3>
+                    <p>Handcrafted treasures made with love and attention to detail.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Pinterest">📌</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./products.html">Shop</a></li>
+                        <li><a href="./about.html">About</a></li>
+                        <li><a href="./contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="./contact.html">Contact Us</a></li>
+                        <li><a href="./shipping.html">Shipping Info</a></li>
+                        <li><a href="./returns.html">Returns</a></li>
+                        <li><a href="./privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Ashley Fields. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Snipcart Integration -->
+    <script>
+        window.SnipcartSettings = {
+            publicApiKey: "MmNmYmQzNmUtY2E3MC00NjgxLWI0M2MtMGU3OGQ3YmRiYWRhNjM4ODYwNTY1ODUxOTM0NzYx",
+            loadStrategy: "on-user-interaction",
+            currency: "usd"
+        };
+
+        (function(){var c,d;(d=(c=window.SnipcartSettings).version)!=null||(c.version="3.0");var s,S;(S=(s=window.SnipcartSettings).timeoutDuration)!=null||(s.timeoutDuration=2750);var l,p;(p=(l=window.SnipcartSettings).domain)!=null||(l.domain="cdn.snipcart.com");var w,u;(u=(w=window.SnipcartSettings).protocol)!=null||(w.protocol="https");var m,g;(g=(m=window.SnipcartSettings).loadCSS)!=null||(m.loadCSS=!0);var y=window.SnipcartSettings.version.includes("v3.0.0-ci")||window.SnipcartSettings.version!="3.0"&&window.SnipcartSettings.version.localeCompare("3.4.0",void 0,{numeric:!0,sensitivity:"base"})===-1,f=["focus","mouseover","touchmove","scroll","keydown"];window.LoadSnipcart=o;document.readyState==="loading"?document.addEventListener("DOMContentLoaded",r):r();function r(){window.SnipcartSettings.loadStrategy?window.SnipcartSettings.loadStrategy==="on-user-interaction"&&(f.forEach(function(t){return document.addEventListener(t,o)}),setTimeout(o,window.SnipcartSettings.timeoutDuration)):o()}var a=!1;function o(){if(a)return;a=!0;let t=document.getElementsByTagName("head")[0],n=document.querySelector("#snipcart"),i=document.querySelector('src[src^="'.concat(window.SnipcartSettings.protocol,"://").concat(window.SnipcartSettings.domain,'"][src$="snipcart.js"]')),e=document.querySelector('link[href^="'.concat(window.SnipcartSettings.protocol,"://").concat(window.SnipcartSettings.domain,'"][href$="snipcart.css"]'));n||(n=document.createElement("div"),n.id="snipcart",n.setAttribute("hidden","true"),document.body.appendChild(n)),h(n),i||(i=document.createElement("script"),i.src="".concat(window.SnipcartSettings.protocol,"://").concat(window.SnipcartSettings.domain,"/themes/v").concat(window.SnipcartSettings.version,"/default/snipcart.js"),i.async=!0,t.appendChild(i)),!e&&window.SnipcartSettings.loadCSS&&(e=document.createElement("link"),e.rel="stylesheet",e.type="text/css",e.href="".concat(window.SnipcartSettings.protocol,"://").concat(window.SnipcartSettings.domain,"/themes/v").concat(window.SnipcartSettings.version,"/default/snipcart.css"),t.prepend(e)),f.forEach(function(v){return document.removeEventListener(v,o)})}function h(t){!y||(t.dataset.apiKey=window.SnipcartSettings.publicApiKey,window.SnipcartSettings.addProductBehavior&&(t.dataset.configAddProductBehavior=window.SnipcartSettings.addProductBehavior),window.SnipcartSettings.modalStyle&&(t.dataset.configModalStyle=window.SnipcartSettings.modalStyle),window.SnipcartSettings.currency&&(t.dataset.currency=window.SnipcartSettings.currency),window.SnipcartSettings.templatesUrl&&(t.dataset.templatesUrl=window.SnipcartSettings.templatesUrl))}})();
+    </script>
+
+    <script src="./js/main.js"></script>
+</body>
+</html> 

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shop Ashley Fields' handmade goods - ceramics, textiles, candles, and more unique handcrafted treasures.">
+    <title>Shop - Ashley Fields Handcrafted Treasures</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/products.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="./index.html">Ashley Fields</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="./index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./products.html" class="nav-link active">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <button class="snipcart-checkout nav-cart-btn">
+                        <span class="cart-icon">🛒</span>
+                        <span class="cart-count snipcart-items-count">0</span>
+                    </button>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Shop Handcrafted Treasures</h1>
+            <p>Discover unique handmade goods crafted with love and attention to detail</p>
+        </div>
+    </section>
+
+    <!-- Product Filters -->
+    <section class="product-filters">
+        <div class="container">
+            <div class="filter-controls">
+                <button class="filter-btn active" data-category="all">All Products</button>
+                <button class="filter-btn" data-category="ceramics">Ceramics</button>
+                <button class="filter-btn" data-category="textiles">Textiles</button>
+                <button class="filter-btn" data-category="candles">Candles</button>
+                <button class="filter-btn" data-category="jewelry">Jewelry</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products-section">
+        <div class="container">
+            <div class="products-grid" id="products-grid">
+                <!-- Ceramics -->
+                <div class="product-card" data-category="ceramics">
+                    <div class="product-image">
+                        <img src="./images/ceramic-vase-1.jpg" alt="Hand-thrown ceramic vase in sage green" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Sage Green Vase</h3>
+                        <p class="product-description">Hand-thrown ceramic vase in a beautiful sage green glaze</p>
+                        <div class="product-price">$45.00</div>
+                        <button class="snipcart-add-item btn btn-primary"
+                                data-item-id="ceramic-vase-sage"
+                                data-item-name="Sage Green Vase"
+                                data-item-price="45.00"
+                                data-item-url="https://yourusername.github.io/a-fields-store/products.html"
+                                data-item-description="Hand-thrown ceramic vase in sage green glaze">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="ceramics">
+                    <div class="product-image">
+                        <img src="./images/ceramic-mug-1.jpg" alt="Handcrafted ceramic coffee mug" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Artisan Coffee Mug</h3>
+                        <p class="product-description">Handcrafted ceramic coffee mug with unique texture</p>
+                        <div class="product-price">$28.00</div>
+                        <button class="snipcart-add-item btn btn-primary"
+                                data-item-id="ceramic-mug-1"
+                                data-item-name="Artisan Coffee Mug"
+                                data-item-price="28.00"
+                                data-item-url="https://yourusername.github.io/a-fields-store/products.html"
+                                data-item-description="Handcrafted ceramic coffee mug with unique texture">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="ceramics">
+                    <div class="product-image">
+                        <img src="./images/ceramic-bowl-1.jpg" alt="Hand-thrown ceramic serving bowl" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Serving Bowl Set</h3>
+                        <p class="product-description">Set of 3 hand-thrown ceramic serving bowls</p>
+                        <div class="product-price">$65.00</div>
+                        <button class="snipcart-add-item btn btn-primary"
+                                data-item-id="ceramic-bowl-set"
+                                data-item-name="Serving Bowl Set"
+                                data-item-price="65.00"
+                                data-item-url="https://yourusername.github.io/a-fields-store/products.html"
+                                data-item-description="Set of 3 hand-thrown ceramic serving bowls">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Textiles -->
+                <div class="product-card" data-category="textiles">
+                    <div class="product-image">
+                        <img src="./images/scarf-wool-1.jpg" alt="Handwoven merino wool scarf" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Merino Wool Scarf</h3>
+                        <p class="product-description">Luxurious handwoven scarf in soft merino wool</p>
+                        <div class="product-price">$35.00</div>
+                        <button class="snipcart-add-item btn btn-primary"
+                                data-item-id="scarf-wool-1"
+                                data-item-name="Merino Wool Scarf"
+                                data-item-price="35.00"
+                                data-item-url="https://yourusername.github.io/a-fields-store/products.html"
+                                data-item-description="Luxurious handwoven scarf in soft merino wool">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="textiles">
+                    <div class="product-image">
+                        <img src="./images/throw-blanket-1.jpg" alt="Hand-knitted throw blanket" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Cozy Throw Blanket</h3>
+                        <p class="product-description">Hand-knitted throw blanket in chunky yarn</p>
+                        <div class="product-price">$85.00</div>
+                        <button class="snipcart-add-item btn btn-primary"
+                                data-item-id="throw-blanket-1"
+                                data-item-name="Cozy Throw Blanket"
+                                data-item-price="85.00"
+                                data-item-url="https://yourusername.github.io/a-fields-store/products.html"
+                                data-item-description="Hand-knitted throw blanket in chunky yarn">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="textiles">
+                    <div class="product-image">
+                        <img src="./images/pillow-cover-1.jpg" alt="Hand-embroidered pillow cover" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Embroidered Pillow Cover</h3>
+                        <p class="product-description">Hand-embroidered pillow cover with floral design</p>
+                        <div class="product-price">$42.00</div>
+                        <button class="snipcart-add-item btn btn-primary"
+                                data-item-id="pillow-cover-1"
+                                data-item-name="Embroidered Pillow Cover"
+                                data-item-price="42.00"
+                                data-item-url="https://yourusername.github.io/a-fields-store/products.html"
+                                data-item-description="Hand-embroidered pillow cover with floral design">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Candles -->
+                <div class="product-card" data-category="candles">
+                    <div class="product-image">
+                        <img src="./images/candle-lavender.jpg" alt="Lavender soy wax candle" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Lavender Fields Candle</h3>
+                        <p class="product-description">Natural soy wax candle with lavender essential oils</p>
+                        <div class="product-price">$28.00</div>
+                        <button class="snipcart-add-item btn btn-primary"
+                                data-item-id="candle-lavender"
+                                data-item-name="Lavender Fields Candle"
+                                data-item-price="28.00"
+                                data-item-url="https://yourusername.github.io/a-fields-store/products.html"
+                                data-item-description="Natural soy wax candle with lavender essential oils">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="candles">
+                    <div class="product-image">
+                        <img src="./images/candle-vanilla.jpg" alt="Vanilla bean soy wax candle" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Vanilla Bean Candle</h3>
+                        <p class="product-description">Warm vanilla bean soy wax candle</p>
+                        <div class="product-price">$28.00</div>
+                        <button class="snipcart-add-item btn btn-primary"
+                                data-item-id="candle-vanilla"
+                                data-item-name="Vanilla Bean Candle"
+                                data-item-price="28.00"
+                                data-item-url="https://yourusername.github.io/a-fields-store/products.html"
+                                data-item-description="Warm vanilla bean soy wax candle">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="candles">
+                    <div class="product-image">
+                        <img src="./images/candle-citrus.jpg" alt="Citrus blend soy wax candle" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Citrus Grove Candle</h3>
+                        <p class="product-description">Refreshing citrus blend soy wax candle</p>
+                        <div class="product-price">$28.00</div>
+                        <button class="snipcart-add-item btn btn-primary"
+                                data-item-id="candle-citrus"
+                                data-item-name="Citrus Grove Candle"
+                                data-item-price="28.00"
+                                data-item-url="https://yourusername.github.io/a-fields-store/products.html"
+                                data-item-description="Refreshing citrus blend soy wax candle">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Jewelry -->
+                <div class="product-card" data-category="jewelry">
+                    <div class="product-image">
+                        <img src="./images/necklace-1.jpg" alt="Handcrafted beaded necklace" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Beaded Necklace</h3>
+                        <p class="product-description">Handcrafted beaded necklace with natural stones</p>
+                        <div class="product-price">$38.00</div>
+                        <button class="snipcart-add-item btn btn-primary"
+                                data-item-id="necklace-1"
+                                data-item-name="Beaded Necklace"
+                                data-item-price="38.00"
+                                data-item-url="https://yourusername.github.io/a-fields-store/products.html"
+                                data-item-description="Handcrafted beaded necklace with natural stones">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="jewelry">
+                    <div class="product-image">
+                        <img src="./images/earrings-1.jpg" alt="Handmade ceramic earrings" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Ceramic Earrings</h3>
+                        <p class="product-description">Handmade ceramic earrings with geometric design</p>
+                        <div class="product-price">$22.00</div>
+                        <button class="snipcart-add-item btn btn-primary"
+                                data-item-id="earrings-1"
+                                data-item-name="Ceramic Earrings"
+                                data-item-price="22.00"
+                                data-item-url="https://yourusername.github.io/a-fields-store/products.html"
+                                data-item-description="Handmade ceramic earrings with geometric design">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="jewelry">
+                    <div class="product-image">
+                        <img src="./images/bracelet-1.jpg" alt="Handwoven friendship bracelet" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Friendship Bracelet</h3>
+                        <p class="product-description">Handwoven friendship bracelet in cotton thread</p>
+                        <div class="product-price">$18.00</div>
+                        <button class="snipcart-add-item btn btn-primary"
+                                data-item-id="bracelet-1"
+                                data-item-name="Friendship Bracelet"
+                                data-item-price="18.00"
+                                data-item-url="https://yourusername.github.io/a-fields-store/products.html"
+                                data-item-description="Handwoven friendship bracelet in cotton thread">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Updated</h2>
+                <p>Be the first to know about new creations and special offers</p>
+                <form class="newsletter-form" id="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Ashley Fields</h3>
+                    <p>Handcrafted treasures made with love and attention to detail.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Pinterest">📌</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./products.html">Shop</a></li>
+                        <li><a href="./about.html">About</a></li>
+                        <li><a href="./contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="./contact.html">Contact Us</a></li>
+                        <li><a href="./shipping.html">Shipping Info</a></li>
+                        <li><a href="./returns.html">Returns</a></li>
+                        <li><a href="./privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Ashley Fields. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Snipcart Integration -->
+    <script>
+        window.SnipcartSettings = {
+            publicApiKey: "MmNmYmQzNmUtY2E3MC00NjgxLWI0M2MtMGU3OGQ3YmRiYWRhNjM4ODYwNTY1ODUxOTM0NzYx",
+            loadStrategy: "on-user-interaction",
+            currency: "usd"
+        };
+
+        (function(){var c,d;(d=(c=window.SnipcartSettings).version)!=null||(c.version="3.0");var s,S;(S=(s=window.SnipcartSettings).timeoutDuration)!=null||(s.timeoutDuration=2750);var l,p;(p=(l=window.SnipcartSettings).domain)!=null||(l.domain="cdn.snipcart.com");var w,u;(u=(w=window.SnipcartSettings).protocol)!=null||(w.protocol="https");var m,g;(g=(m=window.SnipcartSettings).loadCSS)!=null||(m.loadCSS=!0);var y=window.SnipcartSettings.version.includes("v3.0.0-ci")||window.SnipcartSettings.version!="3.0"&&window.SnipcartSettings.version.localeCompare("3.4.0",void 0,{numeric:!0,sensitivity:"base"})===-1,f=["focus","mouseover","touchmove","scroll","keydown"];window.LoadSnipcart=o;document.readyState==="loading"?document.addEventListener("DOMContentLoaded",r):r();function r(){window.SnipcartSettings.loadStrategy?window.SnipcartSettings.loadStrategy==="on-user-interaction"&&(f.forEach(function(t){return document.addEventListener(t,o)}),setTimeout(o,window.SnipcartSettings.timeoutDuration)):o()}var a=!1;function o(){if(a)return;a=!0;let t=document.getElementsByTagName("head")[0],n=document.querySelector("#snipcart"),i=document.querySelector('src[src^="'.concat(window.SnipcartSettings.protocol,"://").concat(window.SnipcartSettings.domain,'"][src$="snipcart.js"]')),e=document.querySelector('link[href^="'.concat(window.SnipcartSettings.protocol,"://").concat(window.SnipcartSettings.domain,'"][href$="snipcart.css"]'));n||(n=document.createElement("div"),n.id="snipcart",n.setAttribute("hidden","true"),document.body.appendChild(n)),h(n),i||(i=document.createElement("script"),i.src="".concat(window.SnipcartSettings.protocol,"://").concat(window.SnipcartSettings.domain,"/themes/v").concat(window.SnipcartSettings.version,"/default/snipcart.js"),i.async=!0,t.appendChild(i)),!e&&window.SnipcartSettings.loadCSS&&(e=document.createElement("link"),e.rel="stylesheet",e.type="text/css",e.href="".concat(window.SnipcartSettings.protocol,"://").concat(window.SnipcartSettings.domain,"/themes/v").concat(window.SnipcartSettings.version,"/default/snipcart.css"),t.prepend(e)),f.forEach(function(v){return document.removeEventListener(v,o)})}function h(t){!y||(t.dataset.apiKey=window.SnipcartSettings.publicApiKey,window.SnipcartSettings.addProductBehavior&&(t.dataset.configAddProductBehavior=window.SnipcartSettings.addProductBehavior),window.SnipcartSettings.modalStyle&&(t.dataset.configModalStyle=window.SnipcartSettings.modalStyle),window.SnipcartSettings.currency&&(t.dataset.currency=window.SnipcartSettings.currency),window.SnipcartSettings.templatesUrl&&(t.dataset.templatesUrl=window.SnipcartSettings.templatesUrl))}})();
+    </script>
+
+    <script src="./js/main.js"></script>
+    <script src="./js/products.js"></script>
+</body>
+</html> 

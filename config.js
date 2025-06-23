@@ -3,10 +3,10 @@
 
 const config = {
     // Base URL - Change this when deploying
-    // baseUrl: 'https://thdevintjaden.github.io/a-fields-store/',
+    baseUrl: 'https://thdevintjaden.github.io/a-fields-store',
     
     // For local development, use:
-    baseUrl: 'http://127.0.0.1:5500',
+    // baseUrl: 'http://127.0.0.1:5500',
     
     // Snipcart API Key - Replace with your actual key
     snipcartApiKey: 'MmNmYmQzNmUtY2E3MC00NjgxLWI0M2MtMGU3OGQ3YmRiYWRhNjM4ODYwNTY1ODUxOTM0NzYx',
